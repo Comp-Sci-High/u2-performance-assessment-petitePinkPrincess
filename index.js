@@ -5,13 +5,22 @@ const chatGPT = "https://api.openai.com/v1/chat/completions"
 const chatGPTKey = process.env.CHATGPT_API_KEY
 const tasty = "https://tasty.p.rapidapi.com/recipes/list?from=0&size=5&q="
 
+let condition = "yes"
+
 console.log("Heyyy this is a mealBot. If you don't what to eat, ask me with the type of food you want. ")
-console.log("You can choose between breakfast, lunch, dinner. You can also specify if you want your meal to be vegan. ")
+console.log("You can choose between breakfast, lunch, dinner. ")
 console.log("Type your request in full sentence. ")
 let userMeal = prompt("")
+let forTasty; 
 
-if (userAsk.includes("world")){
-    
+while (condition != "no") {
+    if (userMeal.includes("breakfast")){
+        forTasty = "breakfast" 
+    } else if (userMeal.includes("lunch")) {
+        forTasty = "lunch"
+    } else if (userMeal.includes("dinner")) {
+        forTasty = "dinner"
+    }
 }
 
 let userAsk = {
